@@ -1,7 +1,7 @@
 ---
 title: MDX
 disableTableOfContents: true
-path: mdx
+path: /mdx
 intro: 'Hello MDX!'
 ---
 
