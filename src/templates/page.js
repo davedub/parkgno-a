@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
 }) {
-  const { markdownRemark } = data // data.markdownRemark holds your page-entry data
+  const { markdownRemark } = data // data.markdownRemark holds page-entry data
   const { frontmatter, html } = markdownRemark
   return (
     <div className="page-entry-container">
@@ -25,6 +25,7 @@ export const pageQuery = graphql`
       frontmatter {
         path
         title
+        intro
       }
     }
   }

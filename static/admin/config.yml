@@ -8,14 +8,13 @@ public_folder: assets
 collections:
   - label: "Pages"
     name: "pages"
-    folder: pages
+    folder: content
     create: true
     fields:
       - {name: path, label: Path}
       - {name: title, label: Title, widget: string}
       - {name: intro, label: Intro, widget: markdown}
       - {name: body, label: Body, widget: markdown }
-      - {label: Location, name: location, widget: map}
   - label: "Documents"				
     name: "Document"
     folder: documents
