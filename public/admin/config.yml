@@ -1,5 +1,6 @@
 backend:
-  name: test-repo
+  name: github
+  repo: davedub/parkgno
 
 media_folder: static/assets
 public_folder: assets
@@ -10,6 +11,7 @@ collections:
     folder: pages
     create: true
     fields:
+      - {name: path, label: Path}
       - {name: title, label: Title, widget: string}
       - {name: intro, label: Intro, widget: markdown}
       - {name: body, label: Body, widget: markdown }
@@ -19,6 +21,7 @@ collections:
     folder: documents
     create: true
     fields:				
+      - {name: path, label: Path}
       - {name: title, label: Title, widget: string}
       - {name: intro, label: Intro, widget: markdown}
       - {name: body, label: Body, widget: markdown }
@@ -27,6 +30,7 @@ collections:
     folder: members
     create: true
     fields:				
+      - { name: path, label: Path }
       - {name: name, label: Name, widget: string}
       - {name: address, label: Address, widget: markdown}
       - {name: email, label: email, widget: string }
