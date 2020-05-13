@@ -10,8 +10,8 @@ class PageRoll extends React.Component {
     return (
       <div className="columns is-multiline">
         {pages &&
-          pages.map(({ node: post }) => (
-            <div className="is-parent column is-6" key={post.id}>
+          pages.map(({ node: page }) => (
+            <div className="is-parent column is-6" key={page.id}>
               <article
                 className={`page-list-item tile is-child box notification ${
                   page.frontmatter.featuredpage ? 'is-featured' : ''
@@ -60,21 +60,21 @@ export default () => (
     query={graphql`
       query PageRollQuery {
         allMarkdownRemark(
-          sort: { order: DESC, fields: [frontmatter___date] }
+          sort: { order: DESC, fields: [frontmatter___title] }
         ) {
           edges {
             node {
               excerpt(pruneLength: 400)
               id
               frontmatter {
-                path
                 title
+                path
               }
             }
           }
         }
       }
     `}
-    render={(data, count) => <PageRoll data={data} count={count} />}
+    render={data => <PageRoll data={data} />}
   />
 )

@@ -1,22 +1,28 @@
 const path = require(`path`);
 
 exports.createPages = async ({actions, graphql, reporter}) => {
-  const {createPages} = actions;
+  const {createPage} = actions;
 
-  const pageEntryTemplate = path.resolve(`src/templates/pages.js`);
+  const pageEntryTemplate = path.resolve(`src/templates/page.js`);
 
   const result = await graphql(`
-    {
-        edges {
-          node {
-            frontmatter {
-              path
-            }
+  {
+    allMarkdownRemark(
+      sort: { 
+        fields: [frontmatter___title] 
+        order: ASC
+      }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            path
           }
         }
       }
     }
-  `);
+  }
+`);
 
   // Handle errors
   if (result.errors) {
