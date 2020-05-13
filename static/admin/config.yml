@@ -1,0 +1,41 @@
+backend:
+  name: test-repo
+
+media_folder: static/assets
+public_folder: assets
+
+collections:
+  - label: "Pages"
+    name: "pages"
+    files:
+      - name: "about"
+        label: "About"
+        file: "site/pages/about.yml"
+        fields:
+          - {name: title, label: Title, widget: string}
+          - {name: intro, label: Intro, widget: markdown}
+          - {name: body, label: Body, widget: markdown }
+      - name: "location"
+        label: "Location"
+        file: "site/content/location.yml"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Intro, name: intro, widget: markdown}
+          - {label: Location, name: location, widget: map}
+  - label: "Documents"				
+    name: "Document"
+    files: 
+      - name: "bylaws"
+        label: "Bylaws"
+        file: "site/document/bylaws.yml"
+        fields:
+          - {name: title, label: Title, widget: string}
+          - {name: intro, label: Intro, widget: markdown}
+          - {name: body, label: Body, widget: markdown }
+      - name: "Covenants"
+        label: "Covenants"
+        file: "site/document/covennts.yml"
+        fields:				
+          - {name: title, label: Title, widget: string}
+          - {name: intro, label: Intro, widget: markdown}
+          - {name: body, label: Body, widget: markdown }
