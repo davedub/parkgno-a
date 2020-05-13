@@ -8,7 +8,7 @@ public_folder: assets
 collections:
   - label: "Pages"
     name: "pages"
-    folder: content
+    folder: content/pages
     create: true
     fields:
       - {name: path, label: Path}
@@ -17,7 +17,7 @@ collections:
       - {name: body, label: Body, widget: markdown }
   - label: "Documents"				
     name: "Document"
-    folder: documents
+    folder: content/documents
     create: true
     fields:				
       - {name: path, label: Path}
@@ -26,7 +26,7 @@ collections:
       - {name: body, label: Body, widget: markdown }
   - label: "Members"				
     name: "Member"
-    folder: members
+    folder: content/members
     create: true
     fields:				
       - { name: path, label: Path }
