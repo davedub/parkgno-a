@@ -1,15 +1,15 @@
 import React from 'react'
 
-import PageRoll from '../components/PageRoll'
+import DocumentRoll from '../components/DocumentRoll'
 
 export default class PageIndexPage extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <h1>Pages</h1>
+        <h1>Documents</h1>
         <section>
-          <div className="content_pages">
-            <PageRoll />
+          <div className="content_documents">
+            <DocumentRoll />
           </div>
         </section>
       </React.Fragment>

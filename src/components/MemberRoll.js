@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
 
-class PageRoll extends React.Component {
+class MemberRoll extends React.Component {
   render() {
     const { data } = this.props;
     const { edges: pages } = data.allMarkdownRemark;
@@ -47,7 +47,7 @@ class PageRoll extends React.Component {
   }
 }
 
-PageRoll.propTypes = {
+MemberRoll.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.array,
@@ -58,24 +58,24 @@ PageRoll.propTypes = {
 export default () => (
   <StaticQuery
     query={graphql`
-        query PageRollQuery {
-          allMarkdownRemark(
-            filter: { fileAbsolutePath: {regex : "\/pages/"} },
-            sort: { order: DESC, fields: [frontmatter___title] }
-          ) {
-            edges {
-              node {
-                excerpt(pruneLength: 400)
-                id
-                frontmatter {
-                  title
-                  path
-                }
+      query MemberRollQuery {
+        allMarkdownRemark(
+          filter: { fileAbsolutePath: {regex : "\/members/"} },
+          sort: { order: DESC, fields: [frontmatter___title] }
+        ) {
+          edges {
+            node {
+              excerpt(pruneLength: 400)
+              id
+              frontmatter {
+                title
+                path
               }
             }
           }
         }
-      `}
-    render={data => <PageRoll data={data} />}
+      }
+    `}
+    render={data => <MemberRoll data={data} />}
   />
 )

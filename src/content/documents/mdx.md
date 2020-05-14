@@ -1,7 +1,7 @@
 ---
-title: MDX
-disableTableOfContents: true
 path: /mdx
+title: MDX
+disableTableOfContents: false
 intro: 'Hello MDX!'
 ---
 

@@ -11,17 +11,27 @@ module.exports = {
     description: "This is my site.",
   },
   plugins: [`gatsby-plugin-netlify-cms`,
-  {
+    {
     resolve: `gatsby-source-filesystem`,
     options: {
       name: `pages`,
-      path: `${__dirname}/content/pages`,
-      name: `documents`,
-      path: `${__dirname}/content/documents`,
-      name: `members`,
-      path: `${__dirname}/content/members`,
+      path: `${__dirname}/src/content/pages/`,
+      },
     },
-  },
-  `gatsby-transformer-remark`
+    {
+    resolve: `gatsby-source-filesystem`,
+    options: {
+        name: `documents`,
+        path: `${__dirname}/src/content/documents/`,
+      },
+    },
+    {
+    resolve: `gatsby-source-filesystem`,
+    options: {
+      name: `members`,
+      path: `${__dirname}/src/content/members/`,
+      },
+    },
+  `gatsby-transformer-remark`,
 ]
 }
