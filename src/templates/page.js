@@ -19,7 +19,7 @@ export default function Template({
     </div>
   )
 }
-export const memberQuery = graphql`
+export const pageQuery = graphql`
   query($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html

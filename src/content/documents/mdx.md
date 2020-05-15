@@ -1,8 +1,7 @@
 ---
 path: /documents/mdx
 title: MDX
-disableTableOfContents: false
-intro: 'Hello MDX!'
+intro: "Hello MDX!"
 ---
 
 ## What is MDX?

@@ -1,9 +1,10 @@
 ---
 path: /members/witus
 title: Witus
-name: David & Gillian
-address: 8938 SE 54th Street
-email: 'dwitus@gmail.com, gwitus@gmail.com'
-telephone: '2063532988 (David), 2063531690 (Gillian)'
+name: David
+address: 40394 NE XXth Street
+email: "witusemail@emailprovider.com"
+telephone: "293-293-82x4"
 ---
 
+Here is some excerpt (not frontmatter) content in this markdown file.

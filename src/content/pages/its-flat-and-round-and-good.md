@@ -1,6 +1,7 @@
 ---
 path: /pages/flat-round-earth
-title: It's flat and round and good
-intro: Good to go
+title: It is flat and round
+intro: And it's very good.
 ---
-Very very good to go slow.
+
+Yes, the earth is very good and it is good to go slow.
