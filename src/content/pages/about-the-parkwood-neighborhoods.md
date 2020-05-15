@@ -1,5 +1,5 @@
 ---
-path: /parkwood-neighborhood
+path: /pages/parkwood-neighborhood
 title: About the Parkwood Neighborhoods
 intro: Parkwood Estates is comprised of 52 homes. Parkwood Ridge consists of nine homes and is adjacent to Parkwood Estates, directly to its east. Ingress and egress to Parkwood Ridge is through Parkwood Estates.
 ---

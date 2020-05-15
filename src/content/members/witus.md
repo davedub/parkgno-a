@@ -1,5 +1,5 @@
 ---
-path: /witus
+path: /members/witus
 title: Witus
 name: David & Gillian
 address: 8938 SE 54th Street

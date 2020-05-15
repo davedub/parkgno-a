@@ -19,17 +19,17 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `members`,
+        path: `${__dirname}/src/content/members/`,
+        },
+      },
+    {
     resolve: `gatsby-source-filesystem`,
     options: {
         name: `documents`,
         path: `${__dirname}/src/content/documents/`,
-      },
-    },
-    {
-    resolve: `gatsby-source-filesystem`,
-    options: {
-      name: `members`,
-      path: `${__dirname}/src/content/members/`,
       },
     },
   `gatsby-transformer-remark`,

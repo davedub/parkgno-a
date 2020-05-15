@@ -19,15 +19,16 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 exports.createPages = async ({actions, graphql, reporter}) => {
   const {createPage} = actions;
 
-  const pageTemplate = path.resolve(`src/templates/page.js`);
-  const documentTemplate = path.resolve(`src/templates/document.js`);
-  const memberTemplate = path.resolve(`src/templates/member.js`);
+  const memberTemplate = path.resolve(`./src/templates/member.js`);
+  const pageTemplate = path.resolve(`./src/templates/page.js`);
+  const documentTemplate = path.resolve(`./src/templates/document.js`);
+
 
   const result = await graphql(`
   {
     allMarkdownRemark(
       sort: {
-        fields: [frontmatter___title]
+        fields: [frontmatter___title],
         order: ASC
       }
     ) {
@@ -48,10 +49,9 @@ exports.createPages = async ({actions, graphql, reporter}) => {
     reporter.panicOnBuild(`Error while running GraphQL query.`);
     return
   }
-
   result.data.allMarkdownRemark.edges.forEach(({node}) => {
     createPage({
-      filter: { fileAbsolutePath: {regex : "\/pages/"}},
+      filter: { fileAbsolutePath: {regex : "\/content/pages/"}},
       path: node.frontmatter.path,
       component: pageTemplate,
       context: {}, // additional data can be passed via context
@@ -59,17 +59,15 @@ exports.createPages = async ({actions, graphql, reporter}) => {
   })
   result.data.allMarkdownRemark.edges.forEach(({node}) => {
     createPage({
-      filter: { fileAbsolutePath: {regex : "\/documents/"}},
+      filter: { fileAbsolutePath: {regex : "\/content/documents/"}},
       path: node.frontmatter.path,
       component: documentTemplate,
       context: {}, // additional data can be passed via context
     })
   })
-
-
   result.data.allMarkdownRemark.edges.forEach(({node}) => {
     createPage({
-      filter: { fileAbsolutePath: {regex : "\/members/"}},
+      filter: { fileAbsolutePath: {regex : "\/content/members/"}},
       path: node.frontmatter.path,
       component: memberTemplate,
       context: {}, // additional data can be passed via context

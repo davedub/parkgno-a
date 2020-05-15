@@ -6,19 +6,20 @@ export default function Template({
   const { markdownRemark } = data // data.markdownRemark holds page-entry data
   const { frontmatter, html } = markdownRemark
   return (
-    <div className="page-entry-container">
+    <div className="page-list">
       <div className="page-entry">
+        <p>This is the page template</p>
         <h2>{frontmatter.title}</h2>
         <h3>{frontmatter.intro}</h3>
         <div
-          className="page-entry-content"
+          className="page-content"
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </div>
     </div>
   )
 }
-export const pageQuery = graphql`
+export const memberQuery = graphql`
   query($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html

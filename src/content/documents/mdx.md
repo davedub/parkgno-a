@@ -1,5 +1,5 @@
 ---
-path: /mdx
+path: /documents/mdx
 title: MDX
 disableTableOfContents: false
 intro: 'Hello MDX!'

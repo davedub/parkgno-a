@@ -8,6 +8,7 @@ export default function Template({
   return (
     <div className="member-list">
       <div className="member-entry">
+        <p>This is the member template</p>
         <h2>{frontmatter.title}</h2>
         <h3>{frontmatter.intro}</h3>
         <div

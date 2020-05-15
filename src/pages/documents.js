@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'gatsby'
 import DocumentRoll from '../components/DocumentRoll'
 
 export default class PageIndexPage extends React.Component {
@@ -12,6 +12,7 @@ export default class PageIndexPage extends React.Component {
             <DocumentRoll />
           </div>
         </section>
+        <p><Link to="/">Back to home</Link></p>
       </React.Fragment>
     )
   }
