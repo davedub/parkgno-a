@@ -1,4 +1,5 @@
 ---
+category: documents
 path: /documents/mdx
 title: MDX
 intro: "Hello MDX!"

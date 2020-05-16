@@ -1,6 +1,7 @@
 ---
+category: pages
 path: /pages/flat-round-earth
-title: It is flat and round
+title: The earth is both flat and round
 intro: And it's very good.
 ---
 

@@ -4,15 +4,36 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
-  if (node.internal.type === `MarkdownRemark`) {
-    const fileNode = getNode(node.parent)
-    console.log(fileNode.sourceInstanceName)
-    console.log(fileNode.relativePath)
-    const slug = createFilePath({ node, getNode, basePath: `pages` })
+
+  if (
+    node.internal.type === `MarkdownRemark` &&
+    node.frontmatter.category === `page`
+  ) {
+    const value = createFilePath({ node, getNode })
     createNodeField({
-      node,
       name: `slug`,
-      value: slug,
+      node,
+      value: `/pages${value}`,
+    })
+  } else if (
+    node.internal.type === `MarkdownRemark` &&
+    node.frontmatter.category === `document`
+  ) {
+    const value = createFilePath({ node, getNode })
+    createNodeField({
+      name: `slug`,
+      node,
+      value: `/document${value}`,
+    })
+  } else if (
+    node.internal.type === `MarkdownRemark` &&
+    node.frontmatter.category === `member`
+  ) {
+    const value = createFilePath({ node, getNode })
+    createNodeField({
+      name: `slug`,
+      node,
+      value: `/members${value}`,
     })
   }
 }
@@ -25,10 +46,42 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const result = await graphql(`
     {
-      allMarkdownRemark(sort: { fields: [frontmatter___title], order: ASC }) {
+      members: allMarkdownRemark(
+        filter: { fileAbsolutePath: { glob: "**/src/content/members/*.md" } }
+        sort: { order: ASC, fields: frontmatter___title }
+      ) {
         edges {
           node {
             frontmatter {
+              category
+              path
+              title
+            }
+          }
+        }
+      }
+      documents: allMarkdownRemark(
+        filter: { fileAbsolutePath: { glob: "**/src/content/documents/*.md" } }
+        sort: { order: ASC, fields: frontmatter___title }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              category
+              path
+              title
+            }
+          }
+        }
+      }
+      pages: allMarkdownRemark(
+        filter: { fileAbsolutePath: { glob: "**/src/content/pages/*.md" } }
+        sort: { order: ASC, fields: frontmatter___title }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              category
               path
               title
             }
@@ -37,13 +90,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       }
     }
   `)
-
   // Handle errors
   if (result.errors) {
     reporter.panicOnBuild(`Error while running GraphQL query.`)
     return
   }
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  result.data.pages.edges.forEach(({ node }) => {
     createPage({
       filter: { fileAbsolutePath: { regex: "/content/pages/" } },
       path: node.frontmatter.path,
@@ -51,7 +103,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {}, // additional data can be passed via context
     })
   })
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  result.data.documents.edges.forEach(({ node }) => {
     createPage({
       filter: { fileAbsolutePath: { regex: "/content/documents/" } },
       path: node.frontmatter.path,
@@ -59,7 +111,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {}, // additional data can be passed via context
     })
   })
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  result.data.members.edges.forEach(({ node }) => {
     createPage({
       filter: { fileAbsolutePath: { regex: "/content/members/" } },
       path: node.frontmatter.path,

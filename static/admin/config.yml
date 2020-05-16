@@ -11,27 +11,30 @@ collections:
     folder: content/pages
     create: true
     fields:
-      - {name: path, label: Path}
-      - {name: title, label: Title, widget: string}
-      - {name: intro, label: Intro, widget: markdown}
-      - {name: body, label: Body, widget: markdown }
-  - label: "Documents"				
+      - { name: category, label: Category, widget: string }
+      - { name: path, label: Path }
+      - { name: title, label: Title, widget: string }
+      - { name: intro, label: Intro, widget: markdown }
+      - { name: body, label: Body, widget: markdown }
+  - label: "Documents"
     name: "Document"
     folder: content/documents
     create: true
-    fields:				
-      - {name: path, label: Path}
-      - {name: title, label: Title, widget: string}
-      - {name: intro, label: Intro, widget: markdown}
-      - {name: body, label: Body, widget: markdown }
-  - label: "Members"				
+    fields:
+      - { name: category, label: Category, widget: string }
+      - { name: path, label: Path }
+      - { name: title, label: Title, widget: string }
+      - { name: intro, label: Intro, widget: markdown }
+      - { name: body, label: Body, widget: markdown }
+  - label: "Members"
     name: "Member"
     folder: content/members
     create: true
-    fields:				
+    fields:
+      - { name: category, label: Category, widget: string }
       - { name: path, label: Path }
-      - {name: title, label: Title, widget: string}
-      - {name: name, label: Name, widget: string}
-      - {name: address, label: Address, widget: markdown}
-      - {name: email, label: email, widget: string }
-      - {name: telephone, label: telephone, widget: string }
+      - { name: title, label: Title, widget: string }
+      - { name: name, label: Name, widget: string }
+      - { name: address, label: Address, widget: markdown }
+      - { name: email, label: email, widget: string }
+      - { name: telephone, label: telephone, widget: string }

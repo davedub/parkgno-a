@@ -8,7 +8,7 @@ export default function Template({
   return (
     <div className="document-container">
       <div className="document-entry">
-      <p>This is the document template</p>
+        <p>This is the document template</p>
         <h2>{frontmatter.title}</h2>
         <h3>{frontmatter.intro}</h3>
         <div

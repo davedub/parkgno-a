@@ -1,4 +1,5 @@
 ---
+category: members
 path: /members/witus
 title: Witus
 name: David
