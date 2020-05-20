@@ -7,8 +7,8 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: "My Site",
-    description: "This is my site.",
+    title: "parkgno-a",
+    description: "Gatsby starter.",
   },
   plugins: [`gatsby-plugin-netlify-cms`,
     {
