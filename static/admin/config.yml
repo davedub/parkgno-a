@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: davedub/parkgno
+  repo: davedub/parkgno-a
 
 media_folder: static/assets
 public_folder: assets

@@ -2,25 +2,9 @@
 
 <h3 align="center">Parkgno-a, from Gatsby hello-world starter</h3>
 
-A barebones implementation (no stylization) of markdown files aggregated by "roll" components and presented individually based on different templates. 
+A barebones implementation (no stylization) of markdown files aggregated by "roll" components and presented individually based on different templates.
 
 ## 🧐 What's inside?
-
-A quick look at the top-level files and directories you'll see in a Gatsby project.
-
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
 
 1.  **`/node_modules`**: Contains all modules your project depends on (npm packages).
 
@@ -32,7 +16,7 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 5.  **`gatsby-browser.js`**: where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
 
-6.  **`gatsby-config.js`**: The main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
+6.  **`gatsby-config.js`**: Configuration file for a Gatsby site. Specify information about it (metadata) like site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
 
 7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
 
